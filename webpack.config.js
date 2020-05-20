@@ -23,8 +23,12 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.css$/,
-				use: [ 'style-loader', 'css-loader' ]
+				test: /\.scss$/,
+				use: [
+					'style-loader', //3 inject styles to dom
+					'css-loader', //2 turn css into commonjs
+					'sass-loader' // 1. turns sass into css
+				]
 			},
 			{
 				test: /\.(png|jpg|gif)$/,
