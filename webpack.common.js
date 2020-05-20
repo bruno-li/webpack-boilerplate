@@ -3,13 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-	mode: 'development',
 	entry: './src/app.js',
-	output: {
-		filename: 'main.[contentHash].js',
-		// absolute path to dist
-		path: path.resolve(__dirname, 'dist')
-	},
 	module: {
 		rules: [
 			{
