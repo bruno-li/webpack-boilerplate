@@ -6,7 +6,7 @@ module.exports = {
 	mode: 'development',
 	entry: './src/app.js',
 	output: {
-		filename: 'main.js',
+		filename: 'main.[contentHash].js',
 		// absolute path to dist
 		path: path.resolve(__dirname, 'dist')
 	},
@@ -40,5 +40,10 @@ module.exports = {
 			}
 		]
 	},
-	plugins: [ new HtmlWebpackPlugin({}), new CleanWebpackPlugin() ]
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: './src/template.html'
+		}),
+		new CleanWebpackPlugin()
+	]
 };
