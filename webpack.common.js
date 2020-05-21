@@ -1,3 +1,5 @@
+// main file exported to prod and dev
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -15,14 +17,7 @@ module.exports = {
 					}
 				}
 			},
-			{
-				test: /\.scss$/,
-				use: [
-					'style-loader', //3 inject styles to dom
-					'css-loader', //2 turn css into commonjs
-					'sass-loader' // 1. turns sass into css
-				]
-			},
+
 			{
 				test: /\.(svg|png|jpg|gif)$/,
 				use: [
