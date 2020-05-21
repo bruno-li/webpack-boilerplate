@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
 	entry: './src/app.js',
@@ -25,19 +24,27 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(png|jpg|gif)$/,
+				test: /\.(svg|png|jpg|gif)$/,
 				use: [
 					{
-						loader: 'file-loader'
+						loader: 'file-loader',
+						// copy images with original name and a hash for cache busting
+						options: {
+							name: '[name].[hash].[ext]',
+							outputPath: 'imgs'
+						}
 					}
 				]
+			},
+			{
+				test: /\.html$/,
+				use: [ 'html-loader' ]
 			}
 		]
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './src/template.html'
-		}),
-		new CleanWebpackPlugin()
+		})
 	]
 };
