@@ -36,10 +36,5 @@ module.exports = {
 				use: [ 'html-loader' ]
 			}
 		]
-	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			template: './src/template.html'
-		})
-	]
+	}
 };
