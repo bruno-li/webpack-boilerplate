@@ -1,7 +1,4 @@
 // main file exported to prod and dev
-
-const path = require('path');
-
 module.exports = {
 	entry: './src/app.js',
 	module: {
